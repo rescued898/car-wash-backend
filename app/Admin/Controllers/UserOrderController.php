@@ -34,10 +34,16 @@ class UserOrderController extends AdminController
         $grid->column('type', __('Type'));
         $grid->column('pay_type', __('Pay type'));
         $grid->column('pay_price', __('Pay price'));
-        $grid->column('is_pay', __('Is pay'));
-        $grid->column('apply_delete', __('Apply delete'));
+        $grid->column('is_pay', __('Is pay'))->display(function ($status) {
+            return $status == 1 ? '是' : '否';
+        });
+        $grid->column('apply_delete', __('Apply delete'))->display(function ($status) {
+            return $status == 1 ? '是' : '否';
+        });
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+
+        $grid->disableCreateButton();
 
         return $grid;
     }

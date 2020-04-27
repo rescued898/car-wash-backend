@@ -415,9 +415,9 @@ return [
 //                    'api_key' => '',
 //                ],
 //
-//                'baidu' => [
-//                    'api_key' => 'xck5u2lga9n1bZkiaXIHtMufWXQnVhdx',
-//                ],
+                'baidu' => [
+                    'api_key' => 'xck5u2lga9n1bZkiaXIHtMufWXQnVhdx',
+                ],
 
                 'tencent' => [
                     'api_key' => 'PNOBZ-DIQY2-OS6UP-CI3IY-MY2CQ-IOFLK',

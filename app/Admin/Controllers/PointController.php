@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Extensions\PointExporter;
 use App\Models\Point;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -36,7 +37,7 @@ class PointController extends AdminController
         });
         $grid->column('updated_at', __('Updated at'));
         $grid->column('created_at', __('Created at'));
-
+        $grid->exporter(new PointExporter());
         return $grid;
     }
 

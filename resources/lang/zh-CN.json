@@ -47,16 +47,15 @@
 
     "Created at": "创建时间",
     "Updated at": "更新时间",
-    "Coupon Type": "洗车券使用类型",
+    "Coupon type": "券类型",
     "Desc": "详情",
     "Pic url": "图片地址",
-    "Coupon type": "洗车券使用类型",
-    "Quantity": "购买洗车券的数量",
-    "Additional coupon type": "额外送的券的使用类型",
-    "Additional quantity": "购买送的券的数量",
+    "Quantity": "购买券数",
+    "Additional coupon type": "额外送券类型",
+    "Additional quantity": "购买送券数",
     "Price": "售价",
     "Sort": "排序",
-    "User num": "每人限制兑换数量",
+    "User num": "限制兑换数",
     "Rule": "使用说明",
 
     "Address": "地址" ,
@@ -70,15 +69,29 @@
     "Contact way": "联系方式",
     "Comments": "备注",
     "User id": "用户名",
-    "Type": "类型",
-    "Pay type": "支付类型",
+    "Type": "服务类型",
+    "Pay type": "支付方式",
     "Pay price": "支付价格",
     "Order no": "订单号",
     "Apply delete": "是否取消订单",
     "Is pay": "是否支付",
     "Point": "洗车点",
-    "Point machine no": "机器ID",
-    "Captcha": "验证码"
+    "Point machine no": "机器型号",
+    "Captcha": "验证码",
+
+    "Machine no": "机器型号",
+    "Machine type": "机器类型",
+    "Cost": "花费金额",
+    "Cost at": "花费当日时间",
+    "Build at": "建设时间",
+    "Remark": "备注",
+    "Deleted at": "删除时间",
+    "Point id": "洗车点",
+    "Point name": "所属洗车点名称",
+
+    "Id": "id",
+    "Is black": "是否加入黑名单",
+    "Parent id": "父级 id"
 
 
 }
