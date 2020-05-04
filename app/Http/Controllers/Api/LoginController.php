@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -22,15 +24,23 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login()
+    public function login(LoginRequest $request)
     {
-        $credentials = request(['email', 'password']);
+        $username = $request->username;
+
+        filter_var($username, FILTER_VALIDATE_EMAIL) ?
+            $credentials['email'] = $username :
+            $credentials['phone'] = $username;
+
+        $credentials['password'] = $request->password;
+
+        // $credentials = request(['email', 'password']);
 
         if (!$token = auth('api')->attempt($credentials)) {
-            return response(['error' => '账号或密码错误'], 400);
+            throw new AuthenticationException(trans('auth.failed'));
         }
 
-        return $this->respondWithToken($token);
+        return $this->respondWithToken($token)->setStatusCode(201);
     }
 
     /**
@@ -52,7 +62,7 @@ class LoginController extends Controller
     {
         auth('api')->logout(true);
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return response()->json(apiResponse(200,'Successfully logged out'));
     }
 
     /**

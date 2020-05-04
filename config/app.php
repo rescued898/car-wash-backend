@@ -228,8 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class, // laravel-admin excel插件
+        'Captcha' => Mews\Captcha\Facades\Captcha::class, // 前后端分离验证码
 
     ],
 

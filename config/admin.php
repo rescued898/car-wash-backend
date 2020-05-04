@@ -300,7 +300,7 @@ return [
     | This value is used to set the background image of login page.
     |
     */
-    'login_background_image' => env('APP_URL') . '/uploads/system/bg.jpg',
+    'login_background_image' => env('APP_URL') . '/uploads/system/bg2.jpg',
 
     /*
     |--------------------------------------------------------------------------

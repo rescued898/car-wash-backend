@@ -11,7 +11,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-    // $router->resource('user-addresses', 'UserAddressController');
     $router->resource('package-coupons', 'PackageCouponController');
     $router->resource('points', 'PointController');
     $router->resource('users', 'UserController');

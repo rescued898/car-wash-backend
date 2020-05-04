@@ -13,30 +13,50 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('test', function (){
-    return 123;
-});
-
 Route::prefix('v1')
     ->namespace('Api')
-    ->middleware('change-locale')
+    // ->middleware('change-locale')
     ->name('api.v1.')
     ->group(function () {
-        Route::post('login', 'LoginController@login');
         Route::middleware('throttle:' . config('api.rate_limits.sign'))
             ->group(function () {
+                // 图片验证码
+                Route::post('captcha', 'CaptchaController@store')
+                    ->name('captcha.store');
+                // 短信验证码
+                Route::post('verificationCodes', 'VerificationCodesController@store')
+                    ->name('verificationCodes.store');
+                // 用户注册
+                Route::post('user', 'UserController@store')
+                    ->name('users.store');
 
+                // 登录
+                Route::post('login', 'LoginController@login')
+                    ->name('authorization.refresh');;
+                // 刷新token
+                Route::put('refresh', 'LoginController@refresh')
+                    ->name('authorization.refresh');
+                // 删除token
+                Route::delete('logout', 'LoginController@logout')
+                    ->name('authorization.logout');
             });
 
         Route::middleware('throttle:' . config('api.rate_limits.access'))
             ->group(function () {
+                // 某个用户的详情
+                Route::get('users/{user}', 'UserController@show')
+                    ->name('users.show');
+                // 获取所有洗车点坐标
+                Route::get('/', 'PointController@index')
+                    ->name('point.index');
 
                 Route::middleware('auth:api')->group(function() {
-
+                    // 当前登录用户信息
+                    Route::get('user', 'UserController@me')
+                        ->name('user.show');
+                    // 编辑登录用户信息
+                    Route::patch('user', 'UserController@update')
+                        ->name('user.update');
                 });
             });
     });

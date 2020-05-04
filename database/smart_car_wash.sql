@@ -11,7 +11,7 @@
  Target Server Version : 50727
  File Encoding         : 65001
 
- Date: 27/04/2020 23:36:56
+ Date: 05/05/2020 01:21:41
 */
 
 SET NAMES utf8mb4;
@@ -65,7 +65,7 @@ CREATE TABLE `admin_operation_log`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 212 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 249 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -281,6 +281,43 @@ INSERT INTO `admin_operation_log` VALUES (208, 1, 'admin/auth/menu/10/edit', 'GE
 INSERT INTO `admin_operation_log` VALUES (209, 1, 'admin/auth/menu/10', 'PUT', '192.168.10.1', '{\"parent_id\":\"0\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-users\",\"uri\":\"\\/users\",\"roles\":[null],\"permission\":null,\"_token\":\"jAiNgTIs2hc6mKdWySoBy9O1pbK2SEpunlx8QAB3\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/carwash.test\\/admin\\/auth\\/menu\"}', '2020-04-27 23:36:42', '2020-04-27 23:36:42');
 INSERT INTO `admin_operation_log` VALUES (210, 1, 'admin/auth/menu', 'GET', '192.168.10.1', '[]', '2020-04-27 23:36:43', '2020-04-27 23:36:43');
 INSERT INTO `admin_operation_log` VALUES (211, 1, 'admin/auth/menu', 'GET', '192.168.10.1', '[]', '2020-04-27 23:36:45', '2020-04-27 23:36:45');
+INSERT INTO `admin_operation_log` VALUES (212, 1, 'admin/auth/menu', 'GET', '192.168.10.1', '[]', '2020-04-27 23:37:01', '2020-04-27 23:37:01');
+INSERT INTO `admin_operation_log` VALUES (213, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-27 23:37:11', '2020-04-27 23:37:11');
+INSERT INTO `admin_operation_log` VALUES (214, 1, 'admin/point-machines', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-27 23:37:16', '2020-04-27 23:37:16');
+INSERT INTO `admin_operation_log` VALUES (215, 1, 'admin/user-orders', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-27 23:37:18', '2020-04-27 23:37:18');
+INSERT INTO `admin_operation_log` VALUES (216, 1, 'admin/package-coupons', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-27 23:37:19', '2020-04-27 23:37:19');
+INSERT INTO `admin_operation_log` VALUES (217, 1, 'admin/package-coupons', 'GET', '192.168.10.1', '[]', '2020-04-27 23:38:35', '2020-04-27 23:38:35');
+INSERT INTO `admin_operation_log` VALUES (218, 1, 'admin/package-coupons', 'GET', '192.168.10.1', '[]', '2020-04-27 23:39:03', '2020-04-27 23:39:03');
+INSERT INTO `admin_operation_log` VALUES (219, 1, 'admin/user-orders', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-27 23:39:05', '2020-04-27 23:39:05');
+INSERT INTO `admin_operation_log` VALUES (220, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-27 23:39:12', '2020-04-27 23:39:12');
+INSERT INTO `admin_operation_log` VALUES (221, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-04-28 21:54:43', '2020-04-28 21:54:43');
+INSERT INTO `admin_operation_log` VALUES (222, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-04-28 21:54:44', '2020-04-28 21:54:44');
+INSERT INTO `admin_operation_log` VALUES (223, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-04-28 21:54:47', '2020-04-28 21:54:47');
+INSERT INTO `admin_operation_log` VALUES (224, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-28 21:54:51', '2020-04-28 21:54:51');
+INSERT INTO `admin_operation_log` VALUES (225, 1, 'admin/points/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-04-28 21:54:59', '2020-04-28 21:54:59');
+INSERT INTO `admin_operation_log` VALUES (226, 1, 'admin/points/create', 'GET', '192.168.10.1', '[]', '2020-04-28 21:56:43', '2020-04-28 21:56:43');
+INSERT INTO `admin_operation_log` VALUES (227, 1, 'admin/points/create', 'GET', '192.168.10.1', '[]', '2020-04-28 21:57:00', '2020-04-28 21:57:00');
+INSERT INTO `admin_operation_log` VALUES (228, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-05-04 01:03:17', '2020-05-04 01:03:17');
+INSERT INTO `admin_operation_log` VALUES (229, 1, 'admin/auth/logout', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:07:56', '2020-05-04 01:07:56');
+INSERT INTO `admin_operation_log` VALUES (230, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-05-04 01:08:27', '2020-05-04 01:08:27');
+INSERT INTO `admin_operation_log` VALUES (231, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:08:31', '2020-05-04 01:08:31');
+INSERT INTO `admin_operation_log` VALUES (232, 1, 'admin/points/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:08:34', '2020-05-04 01:08:34');
+INSERT INTO `admin_operation_log` VALUES (233, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:08:48', '2020-05-04 01:08:48');
+INSERT INTO `admin_operation_log` VALUES (234, 1, 'admin/points/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:08:52', '2020-05-04 01:08:52');
+INSERT INTO `admin_operation_log` VALUES (235, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:09:02', '2020-05-04 01:09:02');
+INSERT INTO `admin_operation_log` VALUES (236, 1, 'admin/points/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:09:04', '2020-05-04 01:09:04');
+INSERT INTO `admin_operation_log` VALUES (237, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:09:38', '2020-05-04 01:09:38');
+INSERT INTO `admin_operation_log` VALUES (238, 1, 'admin/points/2/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:09:41', '2020-05-04 01:09:41');
+INSERT INTO `admin_operation_log` VALUES (239, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:09:53', '2020-05-04 01:09:53');
+INSERT INTO `admin_operation_log` VALUES (240, 1, 'admin/points/create', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:09:55', '2020-05-04 01:09:55');
+INSERT INTO `admin_operation_log` VALUES (241, 1, 'admin/points', 'POST', '192.168.10.1', '{\"name\":\"\\u8fde\\u6c5f\\u53bf\\u653f\\u5e9c\",\"address\":\"\\u8fde\\u6c5f\\u53bf\\u653f\\u5e9c\",\"lng\":\"119.539508\",\"lat\":\"26.197566\",\"status\":\"on\",\"_token\":\"KMdA2Y5mDuvnuIAESpvbAjjxeLPeIHcQjzoOFIZ6\",\"_previous_\":\"http:\\/\\/carwash.test\\/admin\\/points\"}', '2020-05-04 01:10:54', '2020-05-04 01:10:54');
+INSERT INTO `admin_operation_log` VALUES (242, 1, 'admin/points', 'GET', '192.168.10.1', '[]', '2020-05-04 01:10:55', '2020-05-04 01:10:55');
+INSERT INTO `admin_operation_log` VALUES (243, 1, 'admin/points/1/edit', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 01:11:04', '2020-05-04 01:11:04');
+INSERT INTO `admin_operation_log` VALUES (244, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-05-04 12:16:24', '2020-05-04 12:16:24');
+INSERT INTO `admin_operation_log` VALUES (245, 1, 'admin', 'GET', '192.168.10.1', '[]', '2020-05-04 12:16:24', '2020-05-04 12:16:24');
+INSERT INTO `admin_operation_log` VALUES (246, 1, 'admin/points', 'GET', '192.168.10.1', '{\"_pjax\":\"#pjax-container\"}', '2020-05-04 12:16:41', '2020-05-04 12:16:41');
+INSERT INTO `admin_operation_log` VALUES (247, 1, 'admin/points', 'GET', '192.168.10.1', '[]', '2020-05-04 13:32:17', '2020-05-04 13:32:17');
+INSERT INTO `admin_operation_log` VALUES (248, 1, 'admin/points', 'GET', '192.168.10.1', '[]', '2020-05-04 13:51:21', '2020-05-04 13:51:21');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -392,6 +429,10 @@ CREATE TABLE `admin_user_permissions`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of admin_user_permissions
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for admin_users
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_users`;
@@ -411,7 +452,7 @@ CREATE TABLE `admin_users`  (
 -- ----------------------------
 -- Records of admin_users
 -- ----------------------------
-INSERT INTO `admin_users` VALUES (1, 'admin', '$2y$10$.PnDxqWgBonHT3ls6LMSd.QlZ4JeCqfkvBGzsNJ0rr/qeXtdM5ihK', 'Administrator', NULL, 'QiOxfVbDpKMtIow3XL1ADYCCKmvFc2IKw2DaFBekD6hdL2aiEA6fWqZ9mOAC', '2020-03-28 07:30:27', '2020-03-28 07:30:27');
+INSERT INTO `admin_users` VALUES (1, 'admin', '$2y$10$.PnDxqWgBonHT3ls6LMSd.QlZ4JeCqfkvBGzsNJ0rr/qeXtdM5ihK', 'Administrator', NULL, 'YwKtvFGiW9dRrPpOTO47JrHuukUWDSmYInQt9voIIiOTHgTWDU2ItaB9zQl4', '2020-03-28 07:30:27', '2020-03-28 07:30:27');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -426,6 +467,10 @@ CREATE TABLE `failed_jobs`  (
   `failed_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of failed_jobs
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for migrations
@@ -470,6 +515,10 @@ CREATE TABLE `package_coupon`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '洗车优惠包' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of package_coupon
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for package_recharge
 -- ----------------------------
 DROP TABLE IF EXISTS `package_recharge`;
@@ -491,6 +540,10 @@ CREATE TABLE `package_recharge`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '充值优惠包' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of package_recharge
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for password_resets
 -- ----------------------------
 DROP TABLE IF EXISTS `password_resets`;
@@ -500,6 +553,10 @@ CREATE TABLE `password_resets`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   INDEX `password_resets_email_index`(`email`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of password_resets
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for pic
@@ -517,6 +574,10 @@ CREATE TABLE `pic`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of pic
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for point
 -- ----------------------------
 DROP TABLE IF EXISTS `point`;
@@ -530,13 +591,14 @@ CREATE TABLE `point`  (
   `updated_at` datetime(0) NULL DEFAULT NULL,
   `created_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of point
 -- ----------------------------
 INSERT INTO `point` VALUES (1, '福州大学', '福州大学', '26.074795', '119.271853', '1', '2020-04-27 22:27:09', '2020-04-15 22:10:22');
 INSERT INTO `point` VALUES (2, '万里学生街', '万里学生街', '26.031426', '119.30803', '1', '2020-04-27 22:55:47', '2020-04-27 22:55:23');
+INSERT INTO `point` VALUES (3, '连江县政府', '连江县政府', '26.197566', '119.539508', '1', '2020-05-04 01:10:54', '2020-05-04 01:10:54');
 
 -- ----------------------------
 -- Table structure for point_machine
@@ -578,6 +640,10 @@ CREATE TABLE `user_account_log`  (
   `updated_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户账户余额变动记录' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_account_log
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for user_address
@@ -623,6 +689,10 @@ CREATE TABLE `user_auth_login`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户授权登录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of user_auth_login
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for user_coupon
 -- ----------------------------
 DROP TABLE IF EXISTS `user_coupon`;
@@ -642,6 +712,10 @@ CREATE TABLE `user_coupon`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户-优惠券关系' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of user_coupon
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for user_log
 -- ----------------------------
 DROP TABLE IF EXISTS `user_log`;
@@ -656,6 +730,10 @@ CREATE TABLE `user_log`  (
   `updated_at` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_log
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for user_orders
@@ -679,20 +757,23 @@ CREATE TABLE `user_orders`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of user_orders
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '授权手机号',
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp(0) NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `access_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `remember_token` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `phone` char(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '授权手机号',
-  `wechat_open_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '微信openid',
-  `wechat_union_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '微信用户union id',
+  `weixin_openid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '微信openid',
+  `weixin_unionid` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '微信用户union id',
   `money` decimal(10, 2) NULL DEFAULT 0.00 COMMENT '余额',
   `avatar_url` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '头像url',
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
@@ -701,16 +782,15 @@ CREATE TABLE `users`  (
   `created_at` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `updated_at` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `binding`(`phone`) USING BTREE,
-  INDEX `access_token`(`access_token`) USING BTREE
+  UNIQUE INDEX `binding`(`phone`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Send', 'xiya9607@gmail.com', NULL, '$2y$10$6GjXcxbY.4VyrdVL/bmWGuRiFWlz8/VruYIh8vVga7EslD636m3UC', 'tbal7dLZ3frU5Urufckz4CxY7-E9zmBu', NULL, '156 5941 1565', 'oOgla5Dj040jbx9a5TntplSQCtso', '', 10000.00, 'https://wx.qlogo.cn/mmopen/vi_32/oVTZZspdwoGKJricIb2ygTVG7LKm6lvCNXYLrgI56eQpJkJiaeUDjj3FV7fYNn2G16hicVsPyxbGnwibmAl3x6icEAg/132', '阿斯顿发顺丰', 0, 0, NULL, NULL);
-INSERT INTO `users` VALUES (2, 'qiuxi', '913265895@qq.com', NULL, '$2y$10$6GjXcxbY.4VyrdVL/bmWGuRiFWlz8/VruYIh8vVga7EslD636m3UC', NULL, NULL, NULL, '', '', 0.00, NULL, NULL, 0, 0, NULL, NULL);
-INSERT INTO `users` VALUES (3, 'qiuxi12', '235689@qq.com', NULL, '$2y$10$6GjXcxbY.4VyrdVL/bmWGuRiFWlz8/VruYIh8vVga7EslD636m3UC', NULL, NULL, NULL, '', '', 0.00, NULL, NULL, 0, 0, NULL, NULL);
+INSERT INTO `users` VALUES (1, 'Send', '15659411565', 'xiya9607@gmail.com', NULL, '$2y$10$6GjXcxbY.4VyrdVL/bmWGuRiFWlz8/VruYIh8vVga7EslD636m3UC', NULL, 'oOgla5Dj040jbx9a5TntplSQCtso', '', 10000.00, 'https://wx.qlogo.cn/mmopen/vi_32/oVTZZspdwoGKJricIb2ygTVG7LKm6lvCNXYLrgI56eQpJkJiaeUDjj3FV7fYNn2G16hicVsPyxbGnwibmAl3x6icEAg/132', '阿斯顿发顺丰', 0, 0, NULL, NULL);
+INSERT INTO `users` VALUES (2, 'qiuxi', NULL, '913265895@qq.com', NULL, '$2y$10$6GjXcxbY.4VyrdVL/bmWGuRiFWlz8/VruYIh8vVga7EslD636m3UC', NULL, '', '', 0.00, NULL, NULL, 0, 0, NULL, NULL);
+INSERT INTO `users` VALUES (3, 'qiuxi12', NULL, '235689@qq.com', NULL, '$2y$10$6GjXcxbY.4VyrdVL/bmWGuRiFWlz8/VruYIh8vVga7EslD636m3UC', NULL, '', '', 0.00, NULL, NULL, 0, 0, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for wechat_form_id
@@ -732,6 +812,10 @@ CREATE TABLE `wechat_form_id`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '小程序form_id和prepay_id记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of wechat_form_id
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for wechat_template_message
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_template_message`;
@@ -745,5 +829,9 @@ CREATE TABLE `wechat_template_message`  (
   `revoke_tpl` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '订单取消通知模板消息id',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of wechat_template_message
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;

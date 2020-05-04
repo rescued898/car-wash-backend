@@ -3,7 +3,9 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 class Handler extends ExceptionHandler
@@ -51,21 +53,35 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        // 参数验证错误的异常，我们需要返回 400 的 http code 和一句错误信息
+        if ($exception instanceof ValidationException) {
+            return response(apiResponse(400, 'validate fail', ['error' => $exception->errors()] ), 400);
+        }
+        // 用户认证的异常，我们需要返回 401 的 http code 和错误信息
         if ($exception instanceof UnauthorizedHttpException) {
-            $preException = $exception->getPrevious();
-
-            if ($preException instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException) {
-                return response()->json(['error' => 'TOKEN_EXPIRED']);
-            } else if ($preException instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException) {
-                return response()->json(['error' => 'TOKEN_INVALID']);
-            } else if ($preException instanceof \Tymon\JWTAuth\Exceptions\TokenBlacklistedException) {
-                return response()->json(['error' => 'TOKEN_BLACKLISTED']);
-            }
-
-            if ($exception->getMessage() === 'Token not provided') {
-                return response()->json(['error' => 'Token not provided']);
-            }
+            return response(apiResponse(401, $exception->getMessage()), 401);
+        }
+        // 进入未授权的路由时，我们需要返回 401 的 http code 和错误信息
+        if ($exception instanceof AuthenticationException){
+            return response(apiResponse(401, $exception->getMessage()), 401);
         }
         return parent::render($request, $exception);
+    }
+
+    protected function convertExceptionToArray(Exception $e)
+    {
+        return config('app.debug') ? [
+            'message' => $e->getMessage(),
+            'code' => $e->getCode(),
+            'exception' => get_class($e),
+            'file' => $e->getFile(),
+            'line' => $e->getLine(),
+            'trace' => collect($e->getTrace())->map(function ($trace) {
+                return Arr::except($trace, ['args']);
+            })->all(),
+        ] : [
+            'message' => $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
+        ];
     }
 }
