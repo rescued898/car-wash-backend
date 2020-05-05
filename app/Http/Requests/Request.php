@@ -22,6 +22,6 @@ class Request extends FormRequest
     public function failedValidation($validator)
     {
         $error= $validator->errors()->first();
-        throw new HttpResponseException(response()->json(apiResponse(500, $error)));
+        throw new HttpResponseException(response()->json(apiExceptionResponse(400, $error)));
     }
 }

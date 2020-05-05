@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -22,7 +23,9 @@ class LoginController extends Controller
     /**
      * Get a JWT via given credentials.
      *
+     * @param LoginRequest $request
      * @return \Illuminate\Http\JsonResponse
+     * @throws AuthenticationException
      */
     public function login(LoginRequest $request)
     {
@@ -36,10 +39,9 @@ class LoginController extends Controller
 
         // $credentials = request(['email', 'password']);
 
-        if (!$token = auth('api')->attempt($credentials)) {
+        if (!$token = $this->guard()->attempt($credentials)) {
             throw new AuthenticationException(trans('auth.failed'));
         }
-
         return $this->respondWithToken($token)->setStatusCode(201);
     }
 
@@ -60,7 +62,7 @@ class LoginController extends Controller
      */
     public function logout()
     {
-        auth('api')->logout(true);
+        auth('api')->logout();
 
         return response()->json(apiResponse(200,'Successfully logged out'));
     }
@@ -87,17 +89,18 @@ class LoginController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth('api')->factory()->getTTL() * 60
+            'expires_in' => $this->guard()->factory()->getTTL() * 60
         ]);
     }
 
-    protected function getData()
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return \Illuminate\Contracts\Auth\Guard
+     */
+    public function guard()
     {
-//        auth('api');
-        if (!auth('api')->user()) {
-            return response()->json(['message' => 'token 无效!']);
-        }
-        return response()->json(['message' => '成功拿到所需的数据']);
+        return Auth::guard('api');
     }
 
 
