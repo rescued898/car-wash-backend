@@ -8,4 +8,9 @@ use Illuminate\Http\Request;
 class PackageController extends Controller
 {
     //
+    public function test()
+    {
+
+    }
+
 }

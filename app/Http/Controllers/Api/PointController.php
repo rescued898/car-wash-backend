@@ -18,7 +18,7 @@ class PointController extends Controller
             ->when($search, function ($query) use ($search) {
                 $query->where('name', 'like', '%' . $search . '%');
             })
-            ->select(['id','name','lat','lng'])
+            ->select(['id','name', 'address', 'lat','lng'])
             ->get();
         $total = count($points);
         return response()->json(apiResponse(200, 'success', compact('points', 'total')));

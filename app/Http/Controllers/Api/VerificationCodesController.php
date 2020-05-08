@@ -12,6 +12,14 @@ use App\Http\Requests\VerificationCodeRequest;
 
 class VerificationCodesController extends Controller
 {
+    /**
+     * 验证完图片验证码之后 发送验证短信
+     * @param VerificationCodeRequest $request
+     * @param EasySms $easySms
+     * @return \Illuminate\Http\JsonResponse
+     * @throws AuthenticationException
+     * @throws \Overtrue\EasySms\Exceptions\InvalidArgumentException
+     */
     public function store(VerificationCodeRequest $request, EasySms $easySms)
     {
         $captchaData = Cache::get($request->captcha_key);

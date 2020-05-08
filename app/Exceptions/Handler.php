@@ -61,20 +61,21 @@ class Handler extends ExceptionHandler
         if ($exception instanceof ValidationException) {
             return response(apiExceptionResponse(400, '参数验证失败！', $exception->errors() ), 400);
         }
-        // 用户认证的异常，我们需要返回 401 的 http code 和错误信息
+        // 用户授权的异常，我们需要返回 401 的 http code 和错误信息
         if ($exception instanceof UnauthorizedHttpException) {
             return response(apiExceptionResponse(401, $exception->getMessage()), 401);
         }
-        // 进入未授权的路由时，我们需要返回 401 的 http code 和错误信息
+        // 进入未认证的路由时，我们需要返回 401 的 http code 和错误信息
         if ($exception instanceof AuthenticationException){
             return response(apiExceptionResponse(401, $exception->getMessage()), 401);
         }
-        if ($exception instanceof NotFoundHttpException) {
-            return response(apiExceptionResponse(404, '抱歉，未找到数据！' ), 404);
-        }
-        if ($exception instanceof HttpException){
-            return response(apiExceptionResponse(500, '服务器异常!'), 500);
-        }
+        // dd($exception);
+//        if ($exception instanceof NotFoundHttpException) {
+//            return response(apiExceptionResponse(404, '抱歉，未找到数据！' ), 404);
+//        }
+//        if ($exception instanceof HttpException){
+//            return response(apiExceptionResponse(500, '服务器异常!'), 500);
+//        }
         return parent::render($request, $exception);
     }
 
